@@ -11,7 +11,7 @@ def slice_main_template():
     columns = 7
     rows = 5
 
-    image = cv2.imread(filename = "sources/icons-bg.jpg")
+    image = cv2.imread(filename = "sources/icons-nobg.jpg")
 
     subimg_width = convert_dimension_pdf_img(120.27)
     subimg_height = convert_dimension_pdf_img(84.206)
@@ -28,7 +28,7 @@ def slice_main_template():
             end_x = cur_x + subimg_width
             end_y = cur_y + subimg_height
             clip = image[cur_y:end_y, cur_x:end_x, :]
-            cv2.imwrite(filename = f'processed/clip{counter}_{x}_{y}.jpg', img = clip)      
+            cv2.imwrite(filename = f'processed/clip{counter}.jpg', img = clip)      
             counter = counter + 1
 
 slice_main_template()
